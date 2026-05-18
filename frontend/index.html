@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование знаний русского языка</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+
+    <div class="header-left">
+        <img src="img/logo.png" alt="Логотип платформы" class="logo">
+    </div>
+
+    <div class="header-center">
+        <h1>Тестирование русского языка</h1>
+
+        <div class="header-line"></div>
+    </div>
+
+    <div class="header-right">
+        <button class="auth-button">Вход</button>
+        <button class="auth-button">Регистрация</button>
+    </div>
+
+    </header>
+
+    <nav>
+        <button>Тесты</button>
+        <button>Результаты</button>
+        <button>Заметки</button>
+        <button>Вопросы</button>
+        <button>Календарь</button>
+    </nav>
+
+    <main>
+
+        <section class="left-block">
+            <h2>Новости</h2>
+
+            <div id="news-list">
+                <p>Новости пока не добавлены.</p>
+            </div>
+        </section>
+
+        <section class="center-block">
+            <h2>О платформе</h2>
+
+            <p>
+                Онлайн-платформа предназначена для тестирования знаний русского языка у студентов.
+                Она помогает преподавателю создавать задания, проверять ответы и анализировать результаты.
+            </p>
+
+            <p>
+                Студенты могут проходить тесты, просматривать результаты, использовать заметки,
+                задавать вопросы преподавателю и работать с календарём учебных задач.
+            </p>
+
+            <h3>Советы для студентов</h3>
+
+            <ul>
+                <li>Внимательно читайте задание перед ответом.</li>
+                <li>Проверяйте орфографию и пунктуацию.</li>
+                <li>Используйте заметки для сохранения важных правил.</li>
+                <li>Задавайте вопросы преподавателю, если тема непонятна.</li>
+            </ul>
+        </section>
+
+        <section class="right-block">
+
+            <div class="test-block">
+                <h2>Начать тест</h2>
+
+                <input type="text" placeholder="Введите код теста">
+
+                <button>Начать тест</button>
+            </div>
+
+            <div class="question-block">
+                <h2>Задать вопрос</h2>
+
+                <textarea placeholder="Введите вопрос"></textarea>
+
+                <button>Отправить</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Тестирование знаний русского языка</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
