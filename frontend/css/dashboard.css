@@ -1,2 +1,288 @@
 /* Styles for dashboard pages */
 /* Juhtpaneeli lehtede stiilid */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f3e7;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 230px;
+    background-color: #f5f3e7;
+    border-right: 1px solid #d8c76f;
+    padding: 25px 15px;
+}
+
+.sidebar h2 {
+    color: #2f6b3f;
+    font-size: 23px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #2f6b3f;
+    background-color: transparent;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border-left: 4px solid transparent;
+    transition: 0.2s;
+}
+
+.sidebar-menu a:hover {
+    background-color: #e7eddc;
+    color: #2f6b3f;
+    border-left: 4px solid #2f6b3f;
+}
+
+/* Info Box */
+
+.info-box {
+    margin-top: 25px;
+    background-color: #fffdf0;
+    border: 1px solid #d8c76f;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.info-box p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* Main */
+
+.dashboard-main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Header */
+
+.dashboard-header {
+    background: linear-gradient(to right, #1f4d2d, #2f6b3f, #1f4d2d);
+    color: white;
+    padding: 20px 35px;
+    margin-bottom: 20px;
+    min-height: 90px;
+    border-bottom: 4px solid #d8c76f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header h1 {
+    color: #f5f0c9;
+    font-size: 30px;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+/* Profile */
+
+.teacher-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #f5f0c9;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background-color: #2f6b3f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Welcome */
+
+.welcome-block {
+    margin-bottom: 15px;
+}
+
+.welcome-block h2 {
+    color: #2f6b3f;
+    margin-bottom: 10px;
+}
+
+/* Notice */
+
+.notice-block {
+    background-color: #fff8d8;
+    border: 1px solid #d8c76f;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.dash-card {
+    background-color: white;
+    border: 1px solid #d8c76f;
+    border-radius: 10px;
+    padding: 16px;
+    min-height: 130px;
+}
+
+.dash-card h3 {
+    color: #2f6b3f;
+    font-size: 30px;
+    margin: 0 0 8px 0;
+}
+
+.dash-card p {
+    margin-bottom: 18px;
+}
+
+.dash-card button,
+.small-button {
+    background-color: #2f6b3f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.dash-card button:hover,
+.small-button:hover {
+    background-color: #245431;
+}
+
+.blue {
+    background-color: #f3f7ff;
+}
+
+.yellow {
+    background-color: #fff9e8;
+}
+
+.purple {
+    background-color: #faf5ff;
+}
+
+/* Grid */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Panels */
+
+.panel {
+    background-color: white;
+    border: 1px solid #d8c76f;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.panel h2 {
+    color: #2f6b3f;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Empty Data */
+
+.empty-data {
+    color: #777;
+    font-style: italic;
+    text-align: center;
+    padding: 25px;
+}
+
+.participants-placeholder {
+    color: #777;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* Questions */
+
+.questions-panel {
+    margin-bottom: 30px;
+}
+
+.question-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Mobile */
+
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

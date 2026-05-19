@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h2>
+            Тестирование<br>
+            русского языка
+        </h2>
+
+        <nav class="sidebar-menu">
+            <a href="../index.html">Главная</a>
+            <a href="#">Тесты</a>
+            <a href="#">Результаты</a>
+            <a href="#">Вопросы</a>
+            <a href="#">Новости</a>
+            <a href="#">Календарь</a>
+            <a href="#">Участники</a>
+            <a href="#">Настройки</a>
+        </nav>
+
+        <div class="info-box">
+
+            <strong>Как проходят тесты?</strong>
+
+            <p>
+                Преподаватель создаёт тест и получает код.
+                Студенты могут проходить тест без регистрации.
+            </p>
+
+        </div>
+
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <h1>Кабинет преподавателя</h1>
+
+            <!-- data from database later -->
+            <div class="teacher-profile">
+
+                <span class="avatar">МИ</span>
+
+                <span>Марина Ивановна</span>
+
+            </div>
+
+        </header>
+
+        <section class="welcome-block">
+            <!-- data from database later -->
+            <h2>Добро пожаловать, Марина Ивановна!</h2>
+
+            <p>
+                Здесь можно создавать тесты,
+                просматривать результаты и отвечать
+                на вопросы учеников.
+            </p>
+
+        </section>
+
+        <section class="notice-block">
+
+            Тесты могут проходить все желающие по коду.
+            Регистрация для учеников не обязательна.
+
+        </section>
+
+        <section class="cards">
+
+            <div class="dash-card">
+
+                <h3>12</h3>
+
+                <p>Создано тестов</p>
+
+                <button>Перейти к тестам</button>
+
+            </div>
+
+            <div class="dash-card blue">
+
+                <h3>245</h3>
+
+                <p>Прохождений тестов</p>
+
+                <button>Смотреть результаты</button>
+
+            </div>
+
+            <div class="dash-card yellow">
+
+                <h3>18</h3>
+
+                <p>Новых вопросов</p>
+
+                <button>Открыть вопросы</button>
+
+            </div>
+
+            <div class="dash-card purple">
+
+                <h3>+</h3>
+
+                <p>Написать новость</p>
+
+                <button>Создать новость</button>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-grid">
+
+            <div class="panel">
+
+                <h2>Последние тесты</h2>
+
+                <table>
+
+                    <tr>
+                        <th>Название теста</th>
+                        <th>Вопросов</th>
+                        <th>Прохождений</th>
+                        <th>Создан</th>
+                    </tr>
+
+                    <tr>
+
+                        <td colspan="4" class="empty-data">
+
+                            Здесь будут отображаться тесты,
+                            созданные преподавателем
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <button class="small-button">
+                    Создать тест
+                </button>
+
+            </div>
+
+            <div class="panel">
+
+                <h2>Последние результаты</h2>
+
+                <table>
+
+                    <tr>
+                        <th>Имя ученика</th>
+                        <th>Тест</th>
+                        <th>Результат</th>
+                    </tr>
+
+                    <tr>
+
+                        <td colspan="3" class="empty-data">
+
+                            Здесь будут отображаться результаты
+                            прохождения тестов
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="panel participants">
+
+                <h2>Участники</h2>
+
+                <div class="participants-placeholder">
+
+                    Участники будут отображаться
+                    после прохождения тестов
+                    или регистрации.
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="panel questions-panel">
+
+            <h2>Новые вопросы от учеников</h2>
+
+            <div class="question-row empty-data">
+
+                Здесь будут отображаться вопросы
+                от учеников
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
