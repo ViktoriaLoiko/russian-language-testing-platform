@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет студента</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h2>
+            Тестирование<br>
+            русского языка
+        </h2>
+
+        <nav class="sidebar-menu">
+            <a href="../index.html">Главная</a>
+            <a href="#">Мои тесты</a>
+            <a href="#">Заметки</a>
+            <a href="#">Вопросы</a>
+            <a href="#">Календарь</a>
+            <a href="#">Подготовка</a>
+            <a href="#">Профиль</a>
+        </nav>
+
+        <div class="info-box">
+            <strong>Подготовка</strong>
+            <p>
+                В этом разделе студент может сохранять правила,
+                повторять темы и готовиться к тестам.
+            </p>
+        </div>
+
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <h1>Кабинет студента</h1>
+
+            <div class="user-profile">
+
+                <!-- data from database later -->
+                <span class="avatar">AS</span>
+
+                <!-- data from database later -->
+                <span>Anna Sidorova</span>
+
+            </div>
+
+        </header>
+
+        <section class="welcome-block">
+
+            <!-- data from database later -->
+            <h2>Добро пожаловать, Anna!</h2>
+
+            <p>
+                Здесь можно просматривать свои тесты,
+                работать с заметками, задавать вопросы преподавателю
+                и пользоваться календарём подготовки.
+            </p>
+
+        </section>
+
+        <section class="cards">
+
+            <div class="dash-card">
+                <h3>3</h3>
+                <p>Мои тесты</p>
+                <button>Открыть тесты</button>
+            </div>
+
+            <div class="dash-card blue">
+                <h3>5</h3>
+                <p>Заметки</p>
+                <button>Открыть заметки</button>
+            </div>
+
+            <div class="dash-card yellow">
+                <h3>2</h3>
+                <p>Вопросы преподавателю</p>
+                <button>Открыть вопросы</button>
+            </div>
+
+            <div class="dash-card purple">
+                <h3>4</h3>
+                <p>Задачи в календаре</p>
+                <button>Открыть календарь</button>
+            </div>
+
+        </section>
+
+        <section class="dashboard-grid student-grid">
+
+            <div class="panel">
+
+                <h2>Мои последние тесты</h2>
+
+                <table>
+                    <tr>
+                        <th>Тест</th>
+                        <th>Результат</th>
+                        <th>Дата</th>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" class="empty-data">
+                            Здесь будут отображаться результаты тестов студента
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="panel">
+
+                <h2>Подготовка и правила</h2>
+
+                <p>
+                    Здесь будут размещены материалы для подготовки:
+                    правила русского языка, типичные ошибки и советы.
+                </p>
+
+                <button class="small-button">Открыть материалы</button>
+
+            </div>
+
+            <div class="panel participants">
+
+                <h2>Календарь</h2>
+
+                <div class="participants-placeholder">
+                    Здесь будут отображаться ближайшие учебные задачи.
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="panel questions-panel">
+
+            <h2>Вопросы преподавателю</h2>
+
+            <div class="question-row empty-data">
+                Здесь будут отображаться вопросы студента и ответы преподавателя
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
