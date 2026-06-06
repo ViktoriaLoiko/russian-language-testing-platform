@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопросы и ответы</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/questions.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h2>
+            Тестирование<br>
+            русского языка
+        </h2>
+
+        <nav class="sidebar-menu">
+            <a href="../index.html">Главная</a>
+            <a href="student-dashboard.html">Кабинет</a>
+            <a href="#">Мои тесты</a>
+            <a href="notes.html">Заметки</a>
+            <a href="questions.html">Вопросы</a>
+            <a href="calendar.html">Календарь</a>
+            <a href="#">Подготовка</a>
+        </nav>
+
+        <div class="info-box">
+            <strong>О разделе</strong>
+            <p>
+                Здесь можно читать общие вопросы и ответы,
+                а также отправить свой вопрос преподавателю.
+            </p>
+        </div>
+
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <h1>Вопросы и ответы</h1>
+
+            <div class="user-profile">
+                <a href="login.html">
+                    <button class="auth-button">Вход</button>
+                </a>
+
+                <a href="register.html">
+                    <button class="auth-button">Регистрация</button>
+                </a>
+            </div>
+
+        </header>
+
+        <section class="questions-info">
+            <p>
+                Общедоступные вопросы видны всем пользователям.
+                Незарегистрированные пользователи могут задать вопрос,
+                но история вопросов сохраняется только для зарегистрированных пользователей.
+            </p>
+        </section>
+
+        <section class="questions-layout">
+
+            <div class="public-questions">
+
+                <div class="questions-title">
+                    <h2>Общие вопросы</h2>
+
+                    <input type="text" placeholder="Поиск по вопросам...">
+                </div>
+
+                <!-- questions from database later -->
+                <div class="question-card">
+
+                    <div class="question-card-header">
+                        <span class="question-icon">?</span>
+
+                        <div>
+                            <h3>Нужно ли ставить запятую перед союзом «что»?</h3>
+                            <p>Тема: Синтаксис · 18.05.2026</p>
+                        </div>
+                    </div>
+
+                    <div class="answer-box">
+                        <strong>Ответ преподавателя:</strong>
+                        <p>
+                            Да, запятая ставится, если «что» вводит придаточное предложение.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="question-card">
+
+                    <div class="question-card-header">
+                        <span class="question-icon green">?</span>
+
+                        <div>
+                            <h3>Как отличить причастие от прилагательного?</h3>
+                            <p>Тема: Морфология · 16.05.2026</p>
+                        </div>
+                    </div>
+
+                    <div class="answer-box">
+                        <strong>Ответ преподавателя:</strong>
+                        <p>
+                            Причастие обозначает признак по действию и может иметь зависимые слова.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="question-card">
+
+                    <div class="question-card-header">
+                        <span class="question-icon purple">?</span>
+
+                        <div>
+                            <h3>В каких случаях НЕ пишется слитно?</h3>
+                            <p>Тема: Орфография · 15.05.2026</p>
+                        </div>
+                    </div>
+
+                    <div class="answer-box">
+                        <strong>Ответ преподавателя:</strong>
+                        <p>
+                            Слитно пишется, если слово без НЕ не употребляется или можно подобрать синоним без НЕ.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <aside class="ask-question-box">
+
+                <h2>Задать вопрос</h2>
+
+                <form>
+
+                    <label>Ваше имя</label>
+                    <input type="text" placeholder="Введите имя">
+
+                    <label>Тема вопроса</label>
+                    <select>
+                        <option>Орфография</option>
+                        <option>Пунктуация</option>
+                        <option>Морфология</option>
+                        <option>Синтаксис</option>
+                        <option>Другое</option>
+                    </select>
+
+                    <label>Ваш вопрос</label>
+                    <textarea placeholder="Введите вопрос"></textarea>
+
+                    <div class="visibility-box">
+                        <p>Видимость вопроса</p>
+
+                        <label>
+                            <input type="radio" name="visibility" checked>
+                            Опубликовать для всех
+                        </label>
+
+                        <label>
+                            <input type="radio" name="visibility">
+                            Только для меня и преподавателя
+                        </label>
+                    </div>
+
+                    <button type="submit" class="main-button">
+                        Отправить вопрос
+                    </button>
+
+                </form>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
