@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание теста</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/create-test.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="../img/logo.png" alt="Логотип платформы" class="logo">
+    </div>
+
+    <div class="header-center">
+        <h1>Тестирование русского языка</h1>
+        <div class="header-line"></div>
+    </div>
+
+    <div class="header-right">
+        <a href="teacher-dashboard.html">
+            <button class="auth-button">Кабинет</button>
+        </a>
+    </div>
+</header>
+
+<main class="create-test-main">
+
+    <section class="create-test-container">
+
+        <h2>Создание теста</h2>
+
+        <form>
+
+            <label>Название теста</label>
+            <input type="text" placeholder="Безударные гласные">
+
+            <label>Задание</label>
+            <textarea placeholder="Вставьте пропущенные буквы."></textarea>
+
+            <label>Текст для ученика</label>
+            <textarea placeholder="М_л_ко стоит на ст_ле."></textarea>
+
+            <label>Правильный ответ</label>
+            <textarea placeholder="Молоко стоит на столе."></textarea>
+
+            <div class="grading-box">
+
+                <h3>Оценивание</h3>
+
+                <div class="grading-row">
+                    <label>Оценка 5 от</label>
+                    <input type="number" placeholder="90">
+                    <span>%</span>
+                </div>
+
+                <div class="grading-row">
+                    <label>Оценка 4 от</label>
+                    <input type="number" placeholder="75">
+                    <span>%</span>
+                </div>
+
+                <div class="grading-row">
+                    <label>Оценка 3 от</label>
+                    <input type="number" placeholder="50">
+                    <span>%</span>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <a href="teacher-dashboard.html" class="secondary-button">
+                    Назад
+                </a>
+
+                <button type="submit" class="main-button">
+                    Сохранить тест
+                </button>
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Тестирование знаний русского языка</p>
+</footer>
+
+</body>
+</html>
