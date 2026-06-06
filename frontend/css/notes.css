@@ -1,2 +1,92 @@
 /* Styles for notes page */
 /* Märkmete lehe stiilid */
+
+.notes-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fffdf0;
+    border: 1px solid #d8c76f;
+    border-radius: 10px;
+
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.notes-top h2 {
+    color: #2f6b3f;
+    margin: 0 0 8px 0;
+}
+
+.notes-top p {
+    margin: 0;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.note-card {
+    min-height: 220px;
+
+    padding: 22px;
+
+    border-radius: 10px;
+    border: 1px solid #d8c76f;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.note-card h3 {
+    color: #1f4d2d;
+    margin-top: 0;
+}
+
+.note-card p {
+    line-height: 1.5;
+}
+
+.note-card span {
+    display: block;
+    margin-top: 25px;
+
+    color: #555;
+    font-size: 14px;
+}
+
+.note-yellow {
+    background-color: #fff3a8;
+}
+
+.note-green {
+    background-color: #dff0c8;
+}
+
+.note-blue {
+    background-color: #d8ecf7;
+}
+
+.note-purple {
+    background-color: #eadcf7;
+}
+
+@media (max-width: 1000px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .notes-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+}
