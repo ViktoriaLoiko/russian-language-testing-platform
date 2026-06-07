@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат теста</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/result.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="../img/logo.png" alt="Логотип платформы" class="logo">
+    </div>
+
+    <div class="header-center">
+        <h1>Тестирование русского языка</h1>
+        <div class="header-line"></div>
+    </div>
+
+    <div class="header-right">
+        <a href="../index.html">
+            <button class="auth-button">Главная</button>
+        </a>
+    </div>
+</header>
+
+<main class="result-main">
+
+    <section class="result-container">
+
+        <!-- result data from database later -->
+
+        <h2>Результат теста</h2>
+
+        <div class="summary-card">
+            <p><strong>Ученик:</strong> Anna Sidorova</p>
+            <p><strong>Тест:</strong> будет загружено из базы данных</p>
+            <p><strong>Результат:</strong> 80%</p>
+
+            <div class="grade-box">
+                Оценка: 4
+            </div>
+        </div>
+
+        <div class="check-card">
+
+            <h3>Проверка текста</h3>
+
+            <div class="text-block">
+                <h4>Текст задания</h4>
+                <p>
+                    Текст задания будет загружен из базы данных.
+                </p>
+            </div>
+
+            <div class="text-block">
+                <h4>Ваш ответ</h4>
+                <p>
+                    В ответе ученика ошибки будут
+                    <span class="wrong-word">подчёркнуты</span>
+                    красным цветом.
+                </p>
+            </div>
+
+            <div class="text-block">
+                <h4>Правильный ответ</h4>
+                <p>
+                    Правильный ответ будет загружен из базы данных.
+                </p>
+            </div>
+
+            <div class="mistakes-box">
+                <h4>Ошибки</h4>
+
+                <p>
+                    <!-- mistakes from database later -->
+                    Найденные ошибки будут отображаться здесь.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="form-actions">
+
+            <a href="student-dashboard.html" class="main-button">
+                В кабинет
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Тестирование знаний русского языка</p>
+</footer>
+
+</body>
+</html>

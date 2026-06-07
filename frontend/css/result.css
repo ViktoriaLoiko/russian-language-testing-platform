@@ -1,0 +1,104 @@
+/* Styles for result page */
+/* Tulemuste lehe stiilid */
+
+.result-main {
+    display: flex;
+    justify-content: center;
+    padding: 35px 20px;
+    background-color: #f5f3e7;
+}
+
+.result-container {
+    width: 820px;
+    background-color: #fffdf0;
+    border: 1px solid #d8c76f;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.result-container h2 {
+    text-align: center;
+    color: #2f6b3f;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.summary-card,
+.check-card {
+    background-color: #f7f5eb;
+    border: 1px solid #d8c76f;
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.summary-card p {
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.grade-box {
+    margin-top: 20px;
+    padding: 18px;
+    text-align: center;
+    background-color: #eef6e8;
+    border: 1px solid #b9d5aa;
+    border-radius: 8px;
+    color: #2f6b3f;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.check-card h3 {
+    color: #2f6b3f;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.text-block,
+.mistakes-box {
+    background-color: white;
+    border: 1px solid #d8c76f;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 15px;
+}
+
+.text-block h4,
+.mistakes-box h4 {
+    color: #1f4d2d;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.text-block p,
+.mistakes-box p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+.wrong-word {
+    color: #b00020;
+    text-decoration: underline;
+    text-decoration-color: #b00020;
+    text-decoration-thickness: 2px;
+    font-weight: bold;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+@media (max-width: 700px) {
+    .result-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
