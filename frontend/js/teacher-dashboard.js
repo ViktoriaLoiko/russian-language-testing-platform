@@ -1,8 +1,17 @@
 // Card with number of created tests
 const testsCount = document.getElementById("testsCount");
 
+// Card with number of unanswered questions
+const unansweredCount =
+    document.getElementById("unansweredCount");
+
 // Table for displaying teacher tests
-const teacherTestsTable = document.getElementById("teacherTestsTable");
+const teacherTestsTable =
+    document.getElementById("teacherTestsTable");
+
+// Block for unanswered questions
+const unansweredQuestions =
+    document.getElementById("unansweredQuestions");
 
 // QR modal elements
 const qrModal = document.getElementById("qrModal");
@@ -97,6 +106,111 @@ async function loadTeacherTests() {
     });
 }
 
+// Load unanswered questions from database
+async function loadUnansweredQuestions() {
+
+    const response =
+        await fetch("/api/questions/unanswered");
+
+    const questions =
+        await response.json();
+
+    // Show number of unanswered questions
+    unansweredCount.textContent = questions.length;
+
+    unansweredQuestions.innerHTML = "";
+
+    if (questions.length === 0) {
+
+        unansweredQuestions.innerHTML = `
+            <div class="empty-data">
+                Вопросов без ответа пока нет
+            </div>
+        `;
+
+        return;
+    }
+
+    questions.forEach((question) => {
+
+        const questionBlock =
+            document.createElement("div");
+
+        questionBlock.className =
+            "question-row";
+
+        questionBlock.innerHTML = `
+            <h3>${question.question_text}</h3>
+
+            <p>
+                <strong>Тема:</strong> ${question.topic}
+                · ${new Date(question.created_at).toLocaleDateString()}
+            </p>
+
+            <textarea
+                class="answer-input"
+                placeholder="Введите ответ преподавателя"
+            ></textarea>
+
+            <button
+                class="small-button save-answer-button"
+                data-id="${question.id}">
+                Сохранить ответ
+            </button>
+        `;
+
+        unansweredQuestions.appendChild(questionBlock);
+    });
+
+    // Add click events for save answer buttons
+    const answerButtons =
+        document.querySelectorAll(".save-answer-button");
+
+    answerButtons.forEach((button) => {
+
+        button.addEventListener("click", async () => {
+
+            const questionId =
+                button.dataset.id;
+
+            const answerInput =
+                button.previousElementSibling;
+
+            const answerText =
+                answerInput.value.trim();
+
+            if (!answerText) {
+                alert("Введите ответ");
+                return;
+            }
+
+            const response =
+                await fetch(`/api/questions/answer/${questionId}`, {
+
+                    method: "PUT",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        answerText: answerText
+                    })
+                });
+
+            if (response.ok) {
+                alert("Ответ сохранён");
+
+                // Reload unanswered questions after saving answer
+                loadUnansweredQuestions();
+
+            } else {
+                alert("Ошибка сохранения ответа");
+            }
+        });
+    });
+}
+
 // Close modal by close button
 if (qrClose) {
 
@@ -113,5 +227,6 @@ window.addEventListener("click", (event) => {
     }
 });
 
-// Load tests after page is opened
+// Load data after page is opened
 loadTeacherTests();
+loadUnansweredQuestions();

@@ -73,4 +73,73 @@ router.get("/", (req, res) => {
     });
 });
 
+// Load questions without answers
+router.get("/unanswered", (req, res) => {
+
+    const sql = `
+        SELECT *
+        FROM questions
+        WHERE answer_text IS NULL
+        ORDER BY created_at DESC
+    `;
+
+    db.query(sql, (error, results) => {
+
+        if (error) {
+
+            console.log(error);
+
+            res.status(500).json({
+                message: "Unanswered questions load error"
+            });
+
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
+
+// Save teacher answer
+router.put("/answer/:id", (req, res) => {
+
+    const questionId = req.params.id;
+
+    const {
+        answerText
+    } = req.body;
+
+    const sql = `
+        UPDATE questions
+        SET answer_text = ?
+        WHERE id = ?
+    `;
+
+    db.query(
+        sql,
+        [
+            answerText,
+            questionId
+        ],
+        (error) => {
+
+            if (error) {
+
+                console.log(error);
+
+                res.status(500).json({
+                    message: "Answer save error"
+                });
+
+                return;
+            }
+
+            res.json({
+                message: "Answer saved"
+            });
+        }
+    );
+});
+
 module.exports = router;

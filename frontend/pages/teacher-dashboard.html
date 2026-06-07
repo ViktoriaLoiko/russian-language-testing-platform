@@ -22,7 +22,7 @@
         <nav class="sidebar-menu">
             <a href="../index.html">Главная</a>
             <a href="create-test.html">Создать тест</a>
-            <a href="#">Результаты</a>
+            <a href="results.html">Результаты</a>
             <a href="questions.html">Вопросы</a>
         </nav>
 
@@ -59,18 +59,17 @@
         </header>
 
         <section class="welcome-block">
-            <!-- data from database later -->
-            <h2>Добро пожаловать, Марина Ивановна!</h2>
+            <h2>Добро пожаловать!</h2>
 
             <p>
                 Здесь можно создавать тесты,
-                просматривать результаты и отвечать
+                просматривать QR-коды и отвечать
                 на вопросы учеников.
             </p>
         </section>
 
         <section class="notice-block">
-            Тесты могут проходить все желающие по коду.
+            Тесты могут проходить все желающие по коду или QR-коду.
             Регистрация для учеников не обязательна.
         </section>
 
@@ -85,20 +84,11 @@
                 </a>
             </div>
 
-            <div class="dash-card blue">
-                <h3>245</h3>
-                <p>Прохождений тестов</p>
-
-                <button>Смотреть результаты</button>
-            </div>
-
             <div class="dash-card yellow">
-                <h3>18</h3>
-                <p>Новых вопросов</p>
+                <h3 id="unansweredCount">0</h3>
+                <p>Вопросов без ответа</p>
 
-                <a href="questions.html">
-                    <button>Открыть вопросы</button>
-                </a>
+                <button>Смотреть ниже</button>
             </div>
 
             <div class="dash-card purple">
@@ -145,46 +135,16 @@
 
             <div class="panel">
 
-                <h2>Последние результаты</h2>
+                <h2>Вопросы без ответа</h2>
 
-                <table>
-                    <tr>
-                        <th>Имя ученика</th>
-                        <th>Тест</th>
-                        <th>Результат</th>
-                    </tr>
+                <div id="unansweredQuestions">
 
-                    <tr>
-                        <td colspan="3" class="empty-data">
-                            Здесь будут отображаться результаты
-                            прохождения тестов
-                        </td>
-                    </tr>
-                </table>
+                    <div class="empty-data">
+                        Вопросы будут загружены из базы данных
+                    </div>
 
-            </div>
-
-            <div class="panel participants">
-
-                <h2>Участники</h2>
-
-                <div class="participants-placeholder">
-                    Участники будут отображаться
-                    после прохождения тестов
-                    или регистрации.
                 </div>
 
-            </div>
-
-        </section>
-
-        <section class="panel questions-panel">
-
-            <h2>Новые вопросы от учеников</h2>
-
-            <div class="question-row empty-data">
-                Здесь будут отображаться вопросы
-                от учеников
             </div>
 
         </section>
@@ -192,7 +152,6 @@
     </main>
 
 </div>
-
 
 <div class="qr-modal" id="qrModal">
 
@@ -217,5 +176,6 @@
 
 <script src="../js/dashboard-user.js"></script>
 <script src="../js/teacher-dashboard.js"></script>
+
 </body>
 </html>
