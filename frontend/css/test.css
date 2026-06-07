@@ -82,6 +82,14 @@
     background-color: #d8c76f;
 }
 
+/* Help text for answer field */
+
+.answer-help {
+    margin: 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+
 @media (max-width: 700px) {
     .test-container {
         width: 100%;
