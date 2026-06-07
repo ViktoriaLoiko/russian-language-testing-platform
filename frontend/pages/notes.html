@@ -50,11 +50,9 @@
             <h1>Заметки</h1>
 
             <div class="user-profile">
-                <!-- data from database later -->
-                <span class="avatar">AS</span>
-
-                <!-- data from database later -->
-                <span>Anna Sidorova</span>
+                <span class="avatar" id="userAvatar">U</span>
+                <span id="userName">User</span>
+                <button id="logoutButton" class="logout-button">Выйти</button>
             </div>
 
         </header>
@@ -66,28 +64,17 @@
                 <p>Сохраняйте важные правила и примеры по русскому языку.</p>
             </div>
 
-            <button class="small-button">+ Новая заметка</button>
+            <button class="small-button" id="openNoteModal">
+                + Новая заметка
+            </button>
 
         </section>
 
-        <!-- notes from database later -->
-        <section class="notes-grid">
+        <section class="notes-grid" id="notesGrid">
 
             <div class="note-card note-yellow">
-                <h3>Заметка</h3>
-                <p>Здесь будут отображаться заметки пользователя.</p>
-                <span>Дата создания заметки</span>
-            </div>
-
-            <div class="note-card note-green">
-                <h3>Заметка</h3>
-                <p>Здесь будут отображаться сохранённые правила и примеры.</p>
-                <span>Дата создания заметки</span>
-            </div>
-
-            <div class="note-card note-blue">
-                <h3>Заметка</h3>
-                <p>Здесь будут отображаться материалы для повторения.</p>
+                <h3>Заметки будут загружены</h3>
+                <p>Заметки пользователя будут отображаться здесь.</p>
                 <span>Дата создания заметки</span>
             </div>
 
@@ -96,6 +83,41 @@
     </main>
 
 </div>
+
+<div class="qr-modal" id="noteModal">
+
+    <div class="qr-modal-content">
+
+        <button class="qr-close" id="noteClose">×</button>
+
+        <h2>Новая заметка</h2>
+
+        <label>Заголовок</label>
+        <input
+            type="text"
+            id="noteTitle"
+            placeholder="Введите заголовок"
+        >
+
+        <label>Текст заметки</label>
+        <textarea
+            id="noteText"
+            placeholder="Введите текст заметки"
+            style="width:100%; min-height:120px;"
+        ></textarea>
+
+        <button class="main-button" id="saveNoteButton">
+            Сохранить заметку
+        </button>
+
+        <p id="noteMessage"></p>
+
+    </div>
+
+</div>
+
+<script src="../js/dashboard-user.js"></script>
+<script src="../js/notes.js"></script>
 
 </body>
 </html>
