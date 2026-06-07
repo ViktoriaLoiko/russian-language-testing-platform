@@ -223,4 +223,40 @@ router.get("/results/student/:studentId", (req, res) => {
     });
 });
 
+// Load all test results for teacher
+router.get("/results/all", (req, res) => {
+
+    const sql = `
+        SELECT
+            results.id,
+            results.student_answer,
+            results.percent_result,
+            results.grade,
+            results.created_at,
+            tests.title,
+            users.first_name,
+            users.last_name,
+            results.guest_name
+        FROM results
+        JOIN tests ON results.test_id = tests.id
+        LEFT JOIN users ON results.student_id = users.id
+        ORDER BY results.created_at DESC
+    `;
+
+    db.query(sql, (error, results) => {
+
+        if (error) {
+            console.log(error);
+
+            res.status(500).json({
+                message: "Results load error"
+            });
+
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
 module.exports = router;

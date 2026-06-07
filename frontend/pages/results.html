@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+        <h2>Тестирование<br>русского языка</h2>
+
+        <nav class="sidebar-menu">
+            <a href="../index.html">Главная</a>
+            <a href="teacher-dashboard.html">Кабинет</a>
+            <a href="create-test.html">Создать тест</a>
+            <a href="results.html">Результаты</a>
+            <a href="questions.html">Вопросы</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <h1>Результаты тестов</h1>
+
+            <div class="user-profile">
+                <span class="avatar" id="userAvatar">U</span>
+                <span id="userName">User</span>
+                <button id="logoutButton" class="logout-button">Выйти</button>
+            </div>
+        </header>
+
+        <section class="panel">
+
+            <h2>Все результаты</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ученик</th>
+                        <th>Тест</th>
+                        <th>Результат</th>
+                        <th>Оценка</th>
+                        <th>Дата</th>
+                        <th>Подробнее</th>
+                    </tr>
+                </thead>
+
+                <tbody id="resultsTable">
+                    <tr>
+                        <td colspan="6" class="empty-data">
+                            Результаты будут загружены из базы данных
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="qr-modal" id="resultModal">
+
+    <div class="qr-modal-content">
+
+        <button class="qr-close" id="resultClose">×</button>
+
+        <h2>Ответ ученика</h2>
+
+        <p id="modalStudent"></p>
+        <p id="modalTest"></p>
+
+        <div class="text-block">
+            <h4>Ответ:</h4>
+            <p id="modalAnswer"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/dashboard-user.js"></script>
+<script src="../js/results.js"></script>
+
+</body>
+</html>
