@@ -67,7 +67,7 @@
         <section class="cards">
 
             <div class="dash-card blue">
-                <h3>5</h3>
+                <h3 id="notesCount">0</h3>
                 <p>Заметки</p>
 
                 <a href="notes.html">
@@ -76,7 +76,7 @@
             </div>
 
             <div class="dash-card yellow">
-                <h3>2</h3>
+                <h3 id="questionsCount">0</h3>
                 <p>Вопросы преподавателю</p>
 
                 <a href="questions.html">
@@ -116,16 +116,15 @@
 
             <div class="panel participants">
 
-                <h2>Вопросы</h2>
+            <h2>Вопросы</h2>
 
-                <!-- student questions from database later -->
-
+            <div id="studentQuestionsList">
                 <div class="participants-placeholder">
-                    Здесь будут отображаться вопросы студента
-                    и ответы преподавателя.
+                    Вопросы будут загружены из базы данных.
                 </div>
-
             </div>
+
+        </div>
 
         </section>
 

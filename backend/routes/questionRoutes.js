@@ -142,4 +142,33 @@ router.put("/answer/:id", (req, res) => {
     );
 });
 
+// Load questions for one student
+router.get("/student/:userId", (req, res) => {
+
+    const userId = req.params.userId;
+
+    const sql = `
+        SELECT *
+        FROM questions
+        WHERE user_id = ?
+        ORDER BY created_at DESC
+    `;
+
+    db.query(sql, [userId], (error, results) => {
+
+        if (error) {
+
+            console.log(error);
+
+            res.status(500).json({
+                message: "Student questions load error"
+            });
+
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
 module.exports = router;
