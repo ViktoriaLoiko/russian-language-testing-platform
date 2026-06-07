@@ -31,18 +31,31 @@
 
     <section class="result-container">
 
-        <!-- result data from database later -->
+        <!-- result data from localStorage/database later -->
 
         <h2>Результат теста</h2>
 
         <div class="summary-card">
-            <p><strong>Ученик:</strong> Anna Sidorova</p>
-            <p><strong>Тест:</strong> будет загружено из базы данных</p>
-            <p><strong>Результат:</strong> 80%</p>
 
-            <div class="grade-box">
-                Оценка: 4
+            <p>
+                <strong>Ученик:</strong>
+                <span id="resultStudentName">-</span>
+            </p>
+
+            <p>
+                <strong>Тест:</strong>
+                <span id="resultTestTitle">-</span>
+            </p>
+
+            <p>
+                <strong>Результат:</strong>
+                <span id="resultPercent">-</span>
+            </p>
+
+            <div class="grade-box" id="resultGrade">
+                Оценка: -
             </div>
+
         </div>
 
         <div class="check-card">
@@ -51,34 +64,22 @@
 
             <div class="text-block">
                 <h4>Текст задания</h4>
-                <p>
-                    Текст задания будет загружен из базы данных.
-                </p>
+                <p id="resultTaskText">-</p>
             </div>
 
             <div class="text-block">
                 <h4>Ваш ответ</h4>
-                <p>
-                    В ответе ученика ошибки будут
-                    <span class="wrong-word">подчёркнуты</span>
-                    красным цветом.
-                </p>
+                <p id="resultStudentAnswer">-</p>
             </div>
 
             <div class="text-block">
                 <h4>Правильный ответ</h4>
-                <p>
-                    Правильный ответ будет загружен из базы данных.
-                </p>
+                <p id="resultCorrectAnswer">-</p>
             </div>
 
             <div class="mistakes-box">
                 <h4>Ошибки</h4>
-
-                <p>
-                    <!-- mistakes from database later -->
-                    Найденные ошибки будут отображаться здесь.
-                </p>
+                <p id="resultMistakes">-</p>
             </div>
 
         </div>
@@ -98,6 +99,8 @@
 <footer>
     <p>© 2026 Тестирование знаний русского языка</p>
 </footer>
+
+<script src="../js/result.js"></script>
 
 </body>
 </html>

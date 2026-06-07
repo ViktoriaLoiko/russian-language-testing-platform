@@ -4,6 +4,7 @@ const router = express.Router();
 const db = require("../config/db");
 const QRCode = require("qrcode");
 
+// Create new test
 router.post("/create", (req, res) => {
     const {
         teacherId,
@@ -16,6 +17,7 @@ router.post("/create", (req, res) => {
         grade3
     } = req.body;
 
+    // Generate simple test code
     const testCode = "RUS" + Math.floor(100000 + Math.random() * 900000);
 
     const sql = `
@@ -24,36 +26,38 @@ router.post("/create", (req, res) => {
         VALUES (?, ?, ?, ?, ?, ?)
     `;
 
+    // Save test to database
     db.query(
-    sql,
-    [teacherId, title, instruction, taskText, correctAnswer, testCode],
-    async (error) => {
+        sql,
+        [teacherId, title, instruction, taskText, correctAnswer, testCode],
+        async (error) => {
+            if (error) {
+                console.log(error);
 
-        if (error) {
-            console.log(error);
+                res.status(500).json({
+                    message: "Test save error"
+                });
 
-            res.status(500).json({
-                message: "Test save error"
+                return;
+            }
+
+            // Link that will be stored inside QR code
+            const qrData =
+                `http://localhost:3000/pages/test.html?code=${testCode}`;
+
+            // Generate QR code image
+            const qrCode = await QRCode.toDataURL(qrData);
+
+            res.json({
+                message: "Тест сохранён",
+                testCode: testCode,
+                qrCode: qrCode
             });
-
-            return;
         }
-
-        const qrData =
-            `http://localhost:3000/pages/test.html?code=${testCode}`;
-
-        const qrCode = await QRCode.toDataURL(qrData);
-
-        res.json({
-            message: "Тест сохранён",
-            testCode: testCode,
-            qrCode: qrCode
-        });
-
-    }
-);
+    );
 });
 
+// Get all tests created by teacher
 router.get("/teacher/:teacherId", (req, res) => {
     const teacherId = req.params.teacherId;
 
@@ -64,10 +68,15 @@ router.get("/teacher/:teacherId", (req, res) => {
         ORDER BY created_at DESC
     `;
 
+    // Load teacher tests from database
     db.query(sql, [teacherId], (error, results) => {
         if (error) {
             console.log(error);
-            res.status(500).json({ message: "Tests load error" });
+
+            res.status(500).json({
+                message: "Tests load error"
+            });
+
             return;
         }
 
@@ -75,10 +84,11 @@ router.get("/teacher/:teacherId", (req, res) => {
     });
 });
 
-
- router.get("/qr/:testCode", async (req, res) => {
+// Generate QR code for existing test
+router.get("/qr/:testCode", async (req, res) => {
     const testCode = req.params.testCode;
 
+    // Link for student test page
     const qrData =
         `http://localhost:3000/pages/test.html?code=${testCode}`;
 
@@ -88,6 +98,97 @@ router.get("/teacher/:teacherId", (req, res) => {
         testCode: testCode,
         qrCode: qrCode
     });
+});
+
+// Get test by test code
+router.get("/code/:testCode", (req, res) => {
+    const testCode = req.params.testCode;
+
+    const sql = `
+        SELECT
+            id,
+            title,
+            instruction,
+            task_text,
+            correct_answer,
+            test_code
+        FROM tests
+        WHERE test_code = ?
+    `;
+
+    // Load test from database
+    db.query(sql, [testCode], (error, results) => {
+        if (error) {
+            console.log(error);
+
+            res.status(500).json({
+                message: "Test load error"
+            });
+
+            return;
+        }
+
+        // Test was not found
+        if (results.length === 0) {
+            res.status(404).json({
+                message: "Test not found"
+            });
+
+            return;
+        }
+
+        // Return test data
+        res.json(results[0]);
+    });
+});
+
+// Save test result
+router.post("/result", (req, res) => {
+    const {
+        testId,
+        studentId,
+        guestName,
+        guestClass,
+        studentAnswer,
+        percentResult,
+        grade,
+        mistakes
+    } = req.body;
+
+    const sql = `
+        INSERT INTO results
+        (test_id, student_id, guest_name, guest_class, student_answer, percent_result, grade, mistakes)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+
+    db.query(
+        sql,
+        [
+            testId,
+            studentId,
+            guestName,
+            guestClass,
+            studentAnswer,
+            percentResult,
+            grade,
+            mistakes
+        ],
+        (error) => {
+            if (error) {
+                console.log(error);
+
+                res.status(500).json({
+                    message: "Result save error"
+                });
+
+                return;
+            }
+
+            res.json({
+                message: "Result saved"
+            });
+        }
+    );
 });
 
 module.exports = router;

@@ -33,7 +33,7 @@
 
         <!-- test data from database later -->
 
-        <h2>Прохождение теста</h2>
+        <h2 id="testTitle">Загрузка теста...</h2>
 
         <div class="student-info-box">
 
@@ -42,8 +42,18 @@
 
             <h3>Ученик</h3>
 
-            <p><strong>Имя:</strong> Anna Sidorova</p>
-            <p><strong>Класс:</strong> 8A</p>
+            <div id="registeredStudentBox">
+                <p><strong>Имя:</strong> <span id="studentName">Гость</span></p>
+                <p><strong>Класс:</strong> <span id="studentClass">-</span></p>
+            </div>
+
+            <div id="guestStudentBox">
+                <label>Имя</label>
+                <input type="text" id="guestName" placeholder="Введите имя">
+
+                <label>Класс</label>
+                <input type="text" id="guestClass" placeholder="Введите класс">
+            </div>
 
         </div>
 
@@ -51,24 +61,31 @@
 
             <!-- test title and task info from database later -->
 
-            <p><strong>Название теста:</strong> будет загружено из базы данных</p>
-            <p><strong>Задание:</strong> будет загружено из базы данных</p>
+            <p>
+                <strong>Задание:</strong>
+                <span id="testInstruction">Загрузка...</span>
+            </p>
+
+            <p>
+                <strong>Код теста:</strong>
+                <span id="testCode">-</span>
+            </p>
 
         </div>
 
-        <form>
+        <form id="studentTestForm">
 
             <div class="task-box">
 
                 <label>Текст задания</label>
 
-                <div class="task-text">
+                <div class="task-text" id="taskText">
                     Текст задания будет загружен из базы данных.
                 </div>
 
                 <label>Ваш ответ</label>
 
-                <textarea placeholder="Введите ответ"></textarea>
+                <textarea id="studentAnswer" placeholder="Введите ответ"></textarea>
 
             </div>
 
@@ -84,6 +101,8 @@
 
         </form>
 
+        <p id="testMessage"></p>
+
     </section>
 
 </main>
@@ -91,6 +110,8 @@
 <footer>
     <p>© 2026 Тестирование знаний русского языка</p>
 </footer>
+
+<script src="../js/test.js"></script>
 
 </body>
 </html>
