@@ -77,7 +77,7 @@
         <section class="cards">
 
             <div class="dash-card">
-                <h3>12</h3>
+                <h3 id="testsCount">0</h3>
                 <p>Создано тестов</p>
 
                 <a href="create-test.html">
@@ -117,19 +117,22 @@
                 <h2>Последние тесты</h2>
 
                 <table>
-                    <tr>
-                        <th>Название теста</th>
-                        <th>Вопросов</th>
-                        <th>Прохождений</th>
-                        <th>Создан</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Название теста</th>
+                            <th>Создан</th>
+                            <th>Код теста</th>
+                            <th>QR</th>
+                        </tr>
+                    </thead>
 
-                    <tr>
-                        <td colspan="4" class="empty-data">
-                            Здесь будут отображаться тесты,
-                            созданные преподавателем
-                        </td>
-                    </tr>
+                    <tbody id="teacherTestsTable">
+                        <tr>
+                            <td colspan="4" class="empty-data">
+                                Тесты будут загружены из базы данных
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
 
                 <a href="create-test.html">
@@ -190,6 +193,29 @@
 
 </div>
 
+
+<div class="qr-modal" id="qrModal">
+
+    <div class="qr-modal-content">
+
+        <button class="qr-close" id="qrClose">×</button>
+
+        <h2>QR-код теста</h2>
+
+        <p id="modalTestCode"></p>
+
+        <img id="modalQrImage" src="" alt="QR Code">
+
+        <p class="qr-help">
+            Ученики могут отсканировать QR-код,
+            чтобы открыть тест.
+        </p>
+
+    </div>
+
+</div>
+
 <script src="../js/dashboard-user.js"></script>
+<script src="../js/teacher-dashboard.js"></script>
 </body>
 </html>

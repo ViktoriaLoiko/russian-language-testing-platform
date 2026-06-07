@@ -2,6 +2,7 @@ const createTestForm = document.getElementById("createTestForm");
 const createTestMessage = document.getElementById("createTestMessage");
 const testCodeText = document.getElementById("testCodeText");
 const qrText = document.getElementById("qrText");
+const qrImage = document.getElementById("qrImage");
 
 createTestForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -43,8 +44,15 @@ createTestForm.addEventListener("submit", async (event) => {
 
     if (response.ok) {
         createTestMessage.textContent = data.message;
-        testCodeText.textContent = "Код теста: " + data.testCode;
-        qrText.textContent = "Код доступа создан. QR-код будет добавлен позже.";
+
+        testCodeText.textContent =
+            "Код теста: " + data.testCode;
+
+        qrText.textContent =
+            "QR-код создан";
+
+        qrImage.src = data.qrCode;
+        qrImage.style.display = "block";
     } else {
         createTestMessage.textContent = data.message;
     }
