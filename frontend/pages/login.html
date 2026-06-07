@@ -37,21 +37,31 @@
 
         <h2>Вход в систему</h2>
 
-        <form>
+        <form id="loginForm">
 
             <label>Email</label>
 
-            <input type="email" placeholder="Введите email">
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Введите email"
+                >
 
             <label>Пароль</label>
 
-            <input type="password" placeholder="Введите пароль">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Введите пароль"
+                >
 
             <button type="submit" class="main-button">
                 Войти
             </button>
 
         </form>
+
+            <p id="loginMessage"></p>
 
         <p class="auth-text">
             Нет аккаунта?
@@ -66,5 +76,6 @@
     <p>© 2026 Тестирование знаний русского языка</p>
 </footer>
 
+<script src="../js/login.js"></script>
 </body>
 </html>

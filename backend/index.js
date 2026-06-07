@@ -7,10 +7,13 @@ const db = require("./config/db");
 const app = express();
 
 const authRoutes = require("./routes/authRoutes");
+const loginRoutes = require("./routes/loginRoutes");
 
 app.use(cors());
 app.use(express.json());
+
 app.use("/api/auth", authRoutes);
+app.use("/api", loginRoutes);
 
 app.use(express.static(path.join(__dirname, "../frontend")));
 
