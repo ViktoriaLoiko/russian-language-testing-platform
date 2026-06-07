@@ -21,19 +21,23 @@
 
         <nav class="sidebar-menu">
             <a href="../index.html">Главная</a>
-            <a href="#">Мои тесты</a>
-            <a href="#">Заметки</a>
-            <a href="#">Вопросы</a>
-            <a href="#">Календарь</a>
-            <a href="#">Подготовка</a>
-            <a href="#">Профиль</a>
+            <a href="test.html">Пройти тест</a>
+            <a href="result.html">Мои результаты</a>
+            <a href="notes.html">Заметки</a>
+            <a href="questions.html">Вопросы</a>
         </nav>
 
+        <!-- future student functions:
+             Calendar
+             Preparation materials
+             Profile settings
+        -->
+
         <div class="info-box">
-            <strong>Подготовка</strong>
+            <strong>Кабинет студента</strong>
             <p>
-                В этом разделе студент может сохранять правила,
-                повторять темы и готовиться к тестам.
+                Зарегистрированный студент может сохранять результаты,
+                работать с заметками и задавать вопросы преподавателю.
             </p>
         </div>
 
@@ -46,13 +50,11 @@
             <h1>Кабинет студента</h1>
 
             <div class="user-profile">
-
                 <!-- data from database later -->
                 <span class="avatar">AS</span>
 
                 <!-- data from database later -->
                 <span>Anna Sidorova</span>
-
             </div>
 
         </header>
@@ -63,9 +65,8 @@
             <h2>Добро пожаловать, Anna!</h2>
 
             <p>
-                Здесь можно просматривать свои тесты,
-                работать с заметками, задавать вопросы преподавателю
-                и пользоваться календарём подготовки.
+                Здесь можно просматривать результаты тестов,
+                сохранять заметки и задавать вопросы преподавателю.
             </p>
 
         </section>
@@ -75,25 +76,37 @@
             <div class="dash-card">
                 <h3>3</h3>
                 <p>Мои тесты</p>
-                <button>Открыть тесты</button>
+
+                <a href="test.html">
+                    <button>Пройти тест</button>
+                </a>
             </div>
 
             <div class="dash-card blue">
                 <h3>5</h3>
                 <p>Заметки</p>
-                <button>Открыть заметки</button>
+
+                <a href="notes.html">
+                    <button>Открыть заметки</button>
+                </a>
             </div>
 
             <div class="dash-card yellow">
                 <h3>2</h3>
                 <p>Вопросы преподавателю</p>
-                <button>Открыть вопросы</button>
+
+                <a href="questions.html">
+                    <button>Открыть вопросы</button>
+                </a>
             </div>
 
             <div class="dash-card purple">
-                <h3>4</h3>
-                <p>Задачи в календаре</p>
-                <button>Открыть календарь</button>
+                <h3>80%</h3>
+                <p>Последний результат</p>
+
+                <a href="result.html">
+                    <button>Открыть результат</button>
+                </a>
             </div>
 
         </section>
@@ -102,7 +115,7 @@
 
             <div class="panel">
 
-                <h2>Мои последние тесты</h2>
+                <h2>Мои последние результаты</h2>
 
                 <table>
                     <tr>
@@ -122,35 +135,22 @@
 
             <div class="panel">
 
-                <h2>Подготовка и правила</h2>
+                <h2>Последние заметки</h2>
 
-                <p>
-                    Здесь будут размещены материалы для подготовки:
-                    правила русского языка, типичные ошибки и советы.
-                </p>
-
-                <button class="small-button">Открыть материалы</button>
+                <div class="participants-placeholder">
+                    Заметки будут загружены из базы данных.
+                </div>
 
             </div>
 
             <div class="panel participants">
 
-                <h2>Календарь</h2>
+                <h2>Вопросы</h2>
 
                 <div class="participants-placeholder">
-                    Здесь будут отображаться ближайшие учебные задачи.
+                    Здесь будут отображаться вопросы студента и ответы преподавателя.
                 </div>
 
-            </div>
-
-        </section>
-
-        <section class="panel questions-panel">
-
-            <h2>Вопросы преподавателю</h2>
-
-            <div class="question-row empty-data">
-                Здесь будут отображаться вопросы студента и ответы преподавателя
             </div>
 
         </section>
