@@ -56,25 +56,15 @@
         </header>
 
         <section class="welcome-block">
-
-            <!-- data from database later -->
-            <h2>Добро пожаловать, Anna!</h2>
+            <h2 id="welcomeStudent">Добро пожаловать!</h2>
 
             <p>
-                Здесь можно просматривать доступные тесты,
-                результаты, заметки и вопросы преподавателю.
+                Здесь можно просматривать результаты тестов,
+                сохранять заметки и задавать вопросы преподавателю.
             </p>
-
         </section>
 
         <section class="cards">
-
-            <div class="dash-card">
-                <h3>3</h3>
-                <p>Доступные тесты</p>
-
-                <button>Открыть список</button>
-            </div>
 
             <div class="dash-card blue">
                 <h3>5</h3>
@@ -94,39 +84,9 @@
                 </a>
             </div>
 
-            <div class="dash-card purple">
-                <h3>80%</h3>
-                <p>Последний результат</p>
-
-                <button>Смотреть ниже</button>
-            </div>
-
         </section>
 
         <section class="dashboard-grid student-grid">
-
-            <div class="panel">
-
-                <h2>Доступные тесты</h2>
-
-                <!-- student tests from database later -->
-
-                <table>
-                    <tr>
-                        <th>Тест</th>
-                        <th>Статус</th>
-                        <th>Результат</th>
-                    </tr>
-
-                    <tr>
-                        <td colspan="3" class="empty-data">
-                            Здесь будут отображаться тесты,
-                            доступные зарегистрированному студенту.
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
 
             <div class="panel">
 
@@ -135,17 +95,21 @@
                 <!-- student results from database later -->
 
                 <table>
-                    <tr>
-                        <th>Тест</th>
-                        <th>Результат</th>
-                        <th>Дата</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Тест</th>
+                            <th>Результат</th>
+                            <th>Дата</th>
+                        </tr>
+                    </thead>
 
-                    <tr>
-                        <td colspan="3" class="empty-data">
-                            Здесь будут отображаться результаты тестов студента.
-                        </td>
-                    </tr>
+                    <tbody id="studentResultsTable">
+                        <tr>
+                            <td colspan="3" class="empty-data">
+                                Результаты будут загружены из базы данных.
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
 
             </div>
@@ -170,5 +134,7 @@
 </div>
 
 <script src="../js/dashboard-user.js"></script>
+<script src="../js/student-dashboard.js"></script>
+
 </body>
 </html>

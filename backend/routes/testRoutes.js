@@ -191,4 +191,36 @@ router.post("/result", (req, res) => {
     );
 });
 
+// Get results for student
+router.get("/results/student/:studentId", (req, res) => {
+    const studentId = req.params.studentId;
+
+    const sql = `
+        SELECT
+            results.id,
+            tests.title,
+            results.percent_result,
+            results.grade,
+            results.created_at
+        FROM results
+        JOIN tests ON results.test_id = tests.id
+        WHERE results.student_id = ?
+        ORDER BY results.created_at DESC
+    `;
+
+    db.query(sql, [studentId], (error, results) => {
+        if (error) {
+            console.log(error);
+
+            res.status(500).json({
+                message: "Student results load error"
+            });
+
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
 module.exports = router;
