@@ -9,11 +9,13 @@ const app = express();
 const authRoutes = require("./routes/authRoutes");
 const loginRoutes = require("./routes/loginRoutes");
 const testRoutes = require("./routes/testRoutes");
+const questionRoutes = require("./routes/questionRoutes");
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
+app.use("/api/questions", questionRoutes);
 app.use("/api", loginRoutes);
 app.use("/api/tests", testRoutes);
 

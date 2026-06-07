@@ -22,13 +22,15 @@
 
         <nav class="sidebar-menu">
             <a href="../index.html">Главная</a>
-            <a href="student-dashboard.html">Кабинет</a>
-            <a href="#">Мои тесты</a>
-            <a href="notes.html">Заметки</a>
+            <a href="#" id="cabinetLink">Кабинет</a>
             <a href="questions.html">Вопросы</a>
-            <a href="calendar.html">Календарь</a>
-            <a href="#">Подготовка</a>
         </nav>
+
+        <!-- future student functions:
+             Calendar
+             Preparation materials
+             Profile settings
+        -->
 
         <div class="info-box">
             <strong>О разделе</strong>
@@ -47,13 +49,15 @@
             <h1>Вопросы и ответы</h1>
 
             <div class="user-profile">
-                <a href="login.html">
-                    <button class="auth-button">Вход</button>
+                <span class="avatar" id="userAvatar">U</span>
+                <span id="userName">User</span>
+                <a href="login.html" id="loginLink">
+                    <button class="logout-button">Войти</button>
                 </a>
 
-                <a href="register.html">
-                    <button class="auth-button">Регистрация</button>
-                </a>
+                <button id="logoutButton" class="logout-button">
+                    Выйти
+                </button>
             </div>
 
         </header>
@@ -61,8 +65,8 @@
         <section class="questions-info">
             <p>
                 Общедоступные вопросы видны всем пользователям.
-                Незарегистрированные пользователи могут задать вопрос,
-                но история вопросов сохраняется только для зарегистрированных пользователей.
+                Зарегистрированные пользователи могут задавать вопросы
+                и позже видеть ответы преподавателя.
             </p>
         </section>
 
@@ -73,66 +77,33 @@
                 <div class="questions-title">
                     <h2>Общие вопросы</h2>
 
-                    <input type="text" placeholder="Поиск по вопросам...">
+                    <input
+                        type="text"
+                        placeholder="Поиск по вопросам..."
+                    >
                 </div>
 
                 <!-- questions from database later -->
-                <div class="question-card">
+                <div id="questionsList">
 
-                    <div class="question-card-header">
-                        <span class="question-icon">?</span>
+                    <div class="question-card">
 
-                        <div>
-                            <h3>Нужно ли ставить запятую перед союзом «что»?</h3>
-                            <p>Тема: Синтаксис · 18.05.2026</p>
+                        <div class="question-card-header">
+                            <span class="question-icon">?</span>
+
+                            <div>
+                                <h3>Вопросы будут загружены из базы данных</h3>
+                                <p>Тема и дата будут отображаться здесь</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="answer-box">
-                        <strong>Ответ преподавателя:</strong>
-                        <p>
-                            Да, запятая ставится, если «что» вводит придаточное предложение.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="question-card">
-
-                    <div class="question-card-header">
-                        <span class="question-icon green">?</span>
-
-                        <div>
-                            <h3>Как отличить причастие от прилагательного?</h3>
-                            <p>Тема: Морфология · 16.05.2026</p>
+                        <div class="answer-box">
+                            <strong>Ответ преподавателя:</strong>
+                            <p>
+                                Ответ появится после проверки вопроса преподавателем.
+                            </p>
                         </div>
-                    </div>
 
-                    <div class="answer-box">
-                        <strong>Ответ преподавателя:</strong>
-                        <p>
-                            Причастие обозначает признак по действию и может иметь зависимые слова.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="question-card">
-
-                    <div class="question-card-header">
-                        <span class="question-icon purple">?</span>
-
-                        <div>
-                            <h3>В каких случаях НЕ пишется слитно?</h3>
-                            <p>Тема: Орфография · 15.05.2026</p>
-                        </div>
-                    </div>
-
-                    <div class="answer-box">
-                        <strong>Ответ преподавателя:</strong>
-                        <p>
-                            Слитно пишется, если слово без НЕ не употребляется или можно подобрать синоним без НЕ.
-                        </p>
                     </div>
 
                 </div>
@@ -143,13 +114,12 @@
 
                 <h2>Задать вопрос</h2>
 
-                <form>
+                <form id="questionForm">
 
-                    <label>Ваше имя</label>
-                    <input type="text" placeholder="Введите имя">
+                    <!-- guest name field will be displayed later -->
 
                     <label>Тема вопроса</label>
-                    <select>
+                    <select id="questionTopic">
                         <option>Орфография</option>
                         <option>Пунктуация</option>
                         <option>Морфология</option>
@@ -158,25 +128,16 @@
                     </select>
 
                     <label>Ваш вопрос</label>
-                    <textarea placeholder="Введите вопрос"></textarea>
-
-                    <div class="visibility-box">
-                        <p>Видимость вопроса</p>
-
-                        <label>
-                            <input type="radio" name="visibility" checked>
-                            Опубликовать для всех
-                        </label>
-
-                        <label>
-                            <input type="radio" name="visibility">
-                            Только для меня и преподавателя
-                        </label>
-                    </div>
+                    <textarea
+                        id="questionText"
+                        placeholder="Введите вопрос"
+                    ></textarea>
 
                     <button type="submit" class="main-button">
                         Отправить вопрос
                     </button>
+
+                    <p id="questionMessage"></p>
 
                 </form>
 
@@ -187,6 +148,9 @@
     </main>
 
 </div>
+
+<script src="../js/dashboard-user.js"></script>
+<script src="../js/questions.js"></script>
 
 </body>
 </html>
