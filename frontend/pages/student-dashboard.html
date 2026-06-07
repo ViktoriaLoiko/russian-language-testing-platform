@@ -21,8 +21,6 @@
 
         <nav class="sidebar-menu">
             <a href="../index.html">Главная</a>
-            <a href="test.html">Пройти тест</a>
-            <a href="result.html">Мои результаты</a>
             <a href="notes.html">Заметки</a>
             <a href="questions.html">Вопросы</a>
         </nav>
@@ -65,8 +63,8 @@
             <h2>Добро пожаловать, Anna!</h2>
 
             <p>
-                Здесь можно просматривать результаты тестов,
-                сохранять заметки и задавать вопросы преподавателю.
+                Здесь можно просматривать доступные тесты,
+                результаты, заметки и вопросы преподавателю.
             </p>
 
         </section>
@@ -75,11 +73,9 @@
 
             <div class="dash-card">
                 <h3>3</h3>
-                <p>Мои тесты</p>
+                <p>Доступные тесты</p>
 
-                <a href="test.html">
-                    <button>Пройти тест</button>
-                </a>
+                <button>Открыть список</button>
             </div>
 
             <div class="dash-card blue">
@@ -104,9 +100,7 @@
                 <h3>80%</h3>
                 <p>Последний результат</p>
 
-                <a href="result.html">
-                    <button>Открыть результат</button>
-                </a>
+                <button>Смотреть ниже</button>
             </div>
 
         </section>
@@ -115,7 +109,32 @@
 
             <div class="panel">
 
+                <h2>Доступные тесты</h2>
+
+                <!-- student tests from database later -->
+
+                <table>
+                    <tr>
+                        <th>Тест</th>
+                        <th>Статус</th>
+                        <th>Результат</th>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" class="empty-data">
+                            Здесь будут отображаться тесты,
+                            доступные зарегистрированному студенту.
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="panel">
+
                 <h2>Мои последние результаты</h2>
+
+                <!-- student results from database later -->
 
                 <table>
                     <tr>
@@ -126,20 +145,10 @@
 
                     <tr>
                         <td colspan="3" class="empty-data">
-                            Здесь будут отображаться результаты тестов студента
+                            Здесь будут отображаться результаты тестов студента.
                         </td>
                     </tr>
                 </table>
-
-            </div>
-
-            <div class="panel">
-
-                <h2>Последние заметки</h2>
-
-                <div class="participants-placeholder">
-                    Заметки будут загружены из базы данных.
-                </div>
 
             </div>
 
@@ -147,8 +156,11 @@
 
                 <h2>Вопросы</h2>
 
+                <!-- student questions from database later -->
+
                 <div class="participants-placeholder">
-                    Здесь будут отображаться вопросы студента и ответы преподавателя.
+                    Здесь будут отображаться вопросы студента
+                    и ответы преподавателя.
                 </div>
 
             </div>
