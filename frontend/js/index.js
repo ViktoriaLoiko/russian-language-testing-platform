@@ -37,3 +37,44 @@ startTestButton.addEventListener("click", async () => {
         alert("Ошибка загрузки теста");
     }
 });
+
+// News block
+const newsList = document.getElementById("news-list");
+
+// Load news from database
+async function loadNews() {
+
+    const response =
+        await fetch("/api/news");
+
+    const news =
+        await response.json();
+
+    newsList.innerHTML = "";
+
+    if (news.length === 0) {
+        newsList.innerHTML =
+            "<p>Новости пока не добавлены.</p>";
+
+        return;
+    }
+
+    news.forEach((item) => {
+
+        const newsItem =
+            document.createElement("div");
+
+        newsItem.className =
+            "news-item";
+
+        newsItem.innerHTML = `
+            <p>${item.news_text}</p>
+            <span>${new Date(item.created_at).toLocaleDateString()}</span>
+        `;
+
+        newsList.appendChild(newsItem);
+    });
+}
+
+// Load news when main page is opened
+loadNews();

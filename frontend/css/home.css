@@ -62,3 +62,23 @@ li {
 .question-block {
     background-color: #dbe8c4;
 }
+
+/* News block */
+
+.news-item {
+    background-color: #fffdf0;
+    border: 1px solid #d8c76f;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.news-item p {
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.news-item span {
+    color: #666;
+    font-size: 14px;
+}

@@ -1,3 +1,22 @@
+// News modal elements
+const openNewsModal =
+    document.getElementById("openNewsModal");
+
+const newsModal =
+    document.getElementById("newsModal");
+
+const newsClose =
+    document.getElementById("newsClose");
+
+const newsText =
+    document.getElementById("newsText");
+
+const saveNewsButton =
+    document.getElementById("saveNewsButton");
+
+const newsMessage =
+    document.getElementById("newsMessage");
+
 // Card with number of created tests
 const testsCount = document.getElementById("testsCount");
 
@@ -226,6 +245,69 @@ window.addEventListener("click", (event) => {
         qrModal.style.display = "none";
     }
 });
+
+// Open news modal
+if (openNewsModal) {
+
+    openNewsModal.addEventListener("click", () => {
+        newsModal.style.display = "block";
+    });
+}
+
+// Close news modal
+if (newsClose) {
+
+    newsClose.addEventListener("click", () => {
+        newsModal.style.display = "none";
+    });
+}
+
+// Save news to database
+if (saveNewsButton) {
+
+    saveNewsButton.addEventListener("click", async () => {
+
+        const text =
+            newsText.value.trim();
+
+        if (!text) {
+            newsMessage.textContent =
+                "Введите текст новости.";
+            return;
+        }
+
+        const response =
+            await fetch("/api/news/create", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    teacherId: currentUser.id,
+                    newsText: text
+                })
+            });
+
+        const data =
+            await response.json();
+
+        if (response.ok) {
+
+            newsMessage.textContent =
+                "Новость сохранена.";
+
+            newsText.value = "";
+
+        } else {
+
+            newsMessage.textContent =
+                data.message;
+        }
+    });
+}
 
 // Load data after page is opened
 loadTeacherTests();

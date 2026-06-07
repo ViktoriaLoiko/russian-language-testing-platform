@@ -95,7 +95,9 @@
                 <h3>+</h3>
                 <p>Написать новость</p>
 
-                <button>Будет добавлено позже</button>
+                <button id="openNewsModal">
+                    Добавить новость
+                </button>
             </div>
 
         </section>
@@ -150,6 +152,30 @@
         </section>
 
     </main>
+
+</div>
+
+<div class="qr-modal" id="newsModal">
+
+    <div class="qr-modal-content">
+
+        <button class="qr-close" id="newsClose">×</button>
+
+        <h2>Добавить новость</h2>
+
+        <textarea
+            id="newsText"
+            placeholder="Введите текст новости"
+            style="width:100%; min-height:120px;"
+        ></textarea>
+
+        <button class="main-button" id="saveNewsButton">
+            Сохранить новость
+        </button>
+
+        <p id="newsMessage"></p>
+
+    </div>
 
 </div>
 
