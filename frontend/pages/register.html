@@ -37,31 +37,33 @@
 
         <h2>Регистрация</h2>
 
-        <form>
+    <form id="registerForm">
 
-            <label>Имя</label>
-            <input type="text" placeholder="Введите имя">
+        <label>Имя</label>
+        <input type="text" id="firstName" placeholder="Введите имя">
 
-            <label>Фамилия</label>
-            <input type="text" placeholder="Введите фамилию">
+        <label>Фамилия</label>
+        <input type="text" id="lastName" placeholder="Введите фамилию">
 
-            <label>Email</label>
-            <input type="email" placeholder="Введите email">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Введите email">
 
-            <label>Класс</label>
-            <input type="text" placeholder="Например: 10A">
+        <label>Класс</label>
+        <input type="text" id="className" placeholder="Например: 10A">
 
-            <label>Пароль</label>
-            <input type="password" placeholder="Введите пароль">
+        <label>Пароль</label>
+        <input type="password" id="password" placeholder="Введите пароль">
 
-            <label>Повторите пароль</label>
-            <input type="password" placeholder="Повторите пароль">
+        <label>Повторите пароль</label>
+        <input type="password" id="repeatPassword" placeholder="Повторите пароль">
 
-            <button type="submit" class="main-button">
-                Зарегистрироваться
-            </button>
+        <button type="submit" class="main-button">
+            Зарегистрироваться
+        </button>
 
-        </form>
+    </form>
+
+        <p id="registerMessage"></p>
 
         <p class="auth-text">
             Уже есть аккаунт?
@@ -76,5 +78,6 @@
     <p>© 2026 Тестирование знаний русского языка</p>
 </footer>
 
+<script src="../js/register.js"></script>
 </body>
 </html>
