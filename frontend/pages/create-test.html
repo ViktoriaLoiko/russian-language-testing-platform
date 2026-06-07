@@ -33,19 +33,19 @@
 
         <h2>Создание теста</h2>
 
-        <form>
+        <form id="createTestForm">
 
             <label>Название теста</label>
-            <input type="text" placeholder="Безударные гласные">
+            <input type="text" id="testTitle" placeholder="Безударные гласные">
 
             <label>Задание</label>
-            <textarea placeholder="Вставьте пропущенные буквы."></textarea>
+            <textarea id="instruction" placeholder="Вставьте пропущенные буквы."></textarea>
 
             <label>Текст для ученика</label>
-            <textarea placeholder="М_л_ко стоит на ст_ле."></textarea>
+            <textarea id="taskText" placeholder="М_л_ко стоит на ст_ле."></textarea>
 
             <label>Правильный ответ</label>
-            <textarea placeholder="Молоко стоит на столе."></textarea>
+            <textarea id="correctAnswer" placeholder="Молоко стоит на столе."></textarea>
 
             <div class="grading-box">
 
@@ -53,19 +53,19 @@
 
                 <div class="grading-row">
                     <label>Оценка 5 от</label>
-                    <input type="number" placeholder="90">
+                    <input type="number" id="grade5" placeholder="90">
                     <span>%</span>
                 </div>
 
                 <div class="grading-row">
                     <label>Оценка 4 от</label>
-                    <input type="number" placeholder="75">
+                    <input type="number" id="grade4" placeholder="75">
                     <span>%</span>
                 </div>
 
                 <div class="grading-row">
                     <label>Оценка 3 от</label>
-                    <input type="number" placeholder="50">
+                    <input type="number" id="grade3" placeholder="50">
                     <span>%</span>
                 </div>
 
@@ -75,14 +75,17 @@
 
                 <div>
                     <h3>Доступ к тесту</h3>
-                    <p>QR-код будет создан после сохранения теста.</p>
+                    <p id="qrText">QR-код будет создан после сохранения теста.</p>
+                    <p id="testCodeText"></p>
                 </div>
 
-                <div class="qr-placeholder">
+                <div class="qr-placeholder" id="qrPlaceholder">
                     QR
                 </div>
 
             </div>
+
+            <p id="createTestMessage"></p>
 
             <div class="form-actions">
                 <a href="teacher-dashboard.html" class="secondary-button">
@@ -96,6 +99,7 @@
 
         </form>
 
+
     </section>
 
 </main>
@@ -104,5 +108,6 @@
     <p>© 2026 Тестирование знаний русского языка</p>
 </footer>
 
+<script src="../js/create-test.js"></script>
 </body>
 </html>
